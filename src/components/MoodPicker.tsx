@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Text, StyleSheet, Pressable, Image } from 'react-native';
 import { MoodOptionType } from '../types';
 import { theme } from '../theme';
+import { AppText } from './AppText';
 
 const moodOptions: MoodOptionType[] = [
   { emoji: '🧑‍💻', description: 'studious' },
@@ -35,7 +36,9 @@ export const MoodPicker: React.FC<MoodPickerProps> = ({ handleSelectMood }) => {
       <View style={styles.container}>
         <Image source={imageSrc} style={styles.image} />
         <Pressable style={styles.button} onPress={() => setHasSelected(false)}>
-          <Text style={styles.buttonText}>Choose another!</Text>
+          <AppText style={styles.buttonText} fontFamily={'bold'} size={10}>
+            Choose another!
+          </AppText>
         </Pressable>
       </View>
     );
@@ -125,8 +128,6 @@ const styles = StyleSheet.create({
   buttonText: {
     color: theme.colorWhite,
     textAlign: 'center',
-    fontWeight: 'bold',
-    fontFamily: theme.fontFamilyBold,
   },
   image: {
     alignSelf: 'center',
