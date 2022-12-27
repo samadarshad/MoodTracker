@@ -67,7 +67,9 @@ export const MoodPicker: React.FC<MoodPickerProps> = ({ handleSelectMood }) => {
         ))}
       </View>
       <Pressable style={styles.button} onPress={handleSelect}>
-        <Text style={styles.buttonText}>Choose</Text>
+        <AppText style={styles.buttonText} fontFamily={'bold'} size={10}>
+          Choose
+        </AppText>
       </Pressable>
     </View>
   );
